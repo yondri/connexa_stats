@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Connexa stats",
+  "description": "New tab page for connexa devs",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "icon.png"
+  },
+  "chrome_url_overrides" : {
+    "newtab": "newtab.html"
+  },
+  "permissions": [
+    "webRequest",
+    "<all_urls>",
+    "management"
+  ]
+}
