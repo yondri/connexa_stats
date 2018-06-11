@@ -16,6 +16,22 @@ $(function() {
     },
   });
 
+  $.ajax({
+    url: "http://www.api.swip.world/statistics",
+    method: "GET",
+    headers: {
+        //"X-Mashape-Key": API_KEY
+    },
+    dataType: "json",
+    success: function(data) {
+      $('#swip_unique_users').html(data.unique_users + " unique users");
+      $('#swip_active_users').html(data.active_users + " active users");
+    },
+    error: function(data) {
+      $('#stats').html('<h2>Looks like we have a problem, please try again later</h2>');
+    },
+  });
+
   $('#apps').click(function(){
     chrome.tabs.create({ 'url': 'chrome://apps/' });
   });
